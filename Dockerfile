@@ -6,9 +6,12 @@ RUN apk update && \
         dumb-init \
         libarchive-tools \
         logtail \
+        tzdata \
         wget \
         wine \
         xvfb-run
+
+ENV TZ=Europe/Moscow
 
 RUN wineboot -i
 
