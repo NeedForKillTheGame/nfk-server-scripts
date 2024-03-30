@@ -6,9 +6,12 @@ RUN apk update && \
         dumb-init \
         libarchive-tools \
         logtail \
+        tzdata \
         wget \
         wine \
         xvfb-run
+
+ENV TZ=Europe/Moscow
 
 RUN wineboot -i
 
@@ -21,7 +24,7 @@ RUN wget https://github.com/NeedForKillTheGame/needforkill.ru/releases/download/
     rm -f $archive
 
 ARG modelDir=/srv/basenfk/models
-ARG modelList="doom doom2 keel klesk klesk2 xaero"
+ARG modelList="arctic crashed doom2 grunt halo keel klesk2 qforcer ranger rawsteel razor sorlag tankjr uriel2 utguyse visor xaero"
 RUN for m in $modelList; do ln -s $modelDir/sarge $modelDir/$m; done 
 
 HEALTHCHECK --start-period=20s --interval=30s --retries=2 CMD ./healthcheck.sh || kill 1
