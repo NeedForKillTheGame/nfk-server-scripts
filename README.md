@@ -68,7 +68,7 @@ docker run -d --restart=always \
  -e MAP="ctf1 ctf" \
  local/nfk-dedicated Server.exe
 ```
-Example for running CTF server on port 29993 with Machinegun damage = 5.
+Example for running CTF server on port 29992 with Machinegun damage = 5.
 
 #### Additional information
 ##### Healthchecks
