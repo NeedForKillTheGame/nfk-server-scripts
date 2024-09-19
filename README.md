@@ -50,6 +50,7 @@ By default, the server starts with `Server_MG3.exe` binary, but it can be overwr
 ##### Basic usage
 ```bash
 docker run -d --restart=always \
+ --name nfkdedic1 \
  -p 29991:29991/udp \
  -p 28991:28991/tcp \
  -e NFK_HOSTNAME="Example TDM server" \
@@ -60,6 +61,7 @@ This will run NFK dedicated server on ports 29991/udp and 28991/tcp port with de
 
 ```bash
 docker run -d --restart=always \
+ --name nfkdedic2 \
  -p 29992:29992/udp \
  -p 28992:28992/tcp \
  -e NFK_HOSTNAME="Example CTF server MG5" \
@@ -91,6 +93,7 @@ And save the file.\
 Then add [Docker volume flag](https://docs.docker.com/storage/volumes/) to your `docker run` command:
 ```bash
 docker run -d --restart=always \
+ --name nfkdedic3 \
  -p 29993:29993/udp \
  -p 28993:28993/tcp \
  -e NFK_HOSTNAME="Example Duel server" \
